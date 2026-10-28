@@ -1,0 +1,53 @@
+{
+  "name": "react-learn-game",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app components hooks utils middleware.ts next.config.ts",
+    "test": "node --test tests/instrumenter.test.cjs tests/worker-sandbox.test.cjs tests/storage-sync.test.cjs tests/game-rules-and-demo.test.cjs tests/code-validator.test.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.19.2",
+    "acorn": "^8.16.0",
+    "astring": "^1.9.0",
+    "canvas-confetti": "^1.9.4",
+    "next": "^15.5.26",
+    "prismjs": "^1.30.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-simple-code-editor": "^0.14.1"
+  },
+  "optionalDependencies": {
+    "lightningcss-linux-x64-gnu": "1.29.2",
+    "lightningcss-linux-arm64-gnu": "1.29.2",
+    "@tailwindcss/oxide-linux-x64-gnu": "4.1.5",
+    "@tailwindcss/oxide-linux-arm64-gnu": "4.1.5",
+    "@img/sharp-linux-x64": "0.35.4",
+    "@img/sharp-linux-arm64": "0.35.4",
+    "@unrs/resolver-binding-linux-x64-gnu": "1.12.2",
+    "@unrs/resolver-binding-linux-arm64-gnu": "1.12.2"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.15.11",
+    "@tailwindcss/postcss": "^4.1.5",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/estree": "^1.0.9",
+    "@types/node": "^20",
+    "@types/prismjs": "^1.26.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.26",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "$postcss",
+    "sharp": "0.35.4"
+  }
+}
