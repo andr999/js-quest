@@ -10,6 +10,7 @@ import RulesModal from '@/components/RulesModal';
 import VictoryModal from '@/components/VictoryModal';
 import DefeatModal from '@/components/DefeatModal';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import { LEVELS_CONFIG } from '@/utils/levelsConfig';
 import { useGame } from '@/app/context/GameContext';
 
 export interface VictoryConfig {
@@ -157,7 +158,7 @@ export default function LevelLayout({
                 {/* Editor panel */}
                 <div className="min-w-0 flex-1">
                     <GameHUD levelNumber={level} attempts={attempts} />
-                    <h1 className="text-center text-3xl md:text-5xl mb-4">Рівень {level}</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4"><span className="sr-only">Рівень {level}: </span>{LEVELS_CONFIG[level]?.name ?? `Рівень ${level}`}</h1>
 
                     {editorExtra ? (
                         <div className="flex justify-between items-center mb-2">

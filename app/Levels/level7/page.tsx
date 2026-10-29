@@ -442,7 +442,7 @@ export default function Level7() {
 
             <div className="w-full min-w-0 flex-1">
                 <GameHUD levelNumber={LEVEL_NUMBER} attempts={attempts} />
-                <h1 className="text-center text-3xl md:text-5xl mb-4">Рівень 7</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4"><span className="sr-only">Рівень 7: </span>{CONFIG.name}</h1>
                 <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
                     <label htmlFor="level-7-code-editor" className="text-xl font-bold">Твій код:</label>
                     <div className="flex flex-wrap gap-2" aria-label="Стан DOM-завдань">
@@ -496,17 +496,17 @@ export default function Level7() {
                     {execution.executionState !== 'running' ? (
                         <button
                             onClick={execution.handleRun}
-                            className="px-4 py-2 bg-purple-700 text-white rounded hover:bg-purple-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50"
+                            className="px-4 py-2 bg-emerald-700 text-white rounded hover:bg-emerald-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-emerald-700"
                             disabled={execution.isPreparing || isVictory || isDefeat || showRules}
                         >
-                            {execution.isPreparing ? 'Підготовка…' : 'Запустити 🚀'}
+                            {execution.isPreparing ? 'Підготовка…' : 'Запустити ▶️'}
                         </button>
                     ) : (
                         <button onClick={execution.pause} className="px-4 py-2 bg-amber-800 text-white rounded hover:bg-amber-900 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" disabled={execution.isPreparing || isVictory || isDefeat || showRules}>Пауза ⏸️</button>
                     )}
-                    <button onClick={execution.handleStep} className="px-4 py-2 bg-indigo-700 text-white rounded hover:bg-indigo-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" disabled={execution.isPreparing || execution.executionState === 'running' || isVictory || isDefeat || showRules}>Крок 👣</button>
+                    <button onClick={execution.handleStep} className="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" disabled={execution.isPreparing || execution.executionState === 'running' || isVictory || isDefeat || showRules}>Крок 👣</button>
                     <button onClick={resetLevel} className="px-4 py-2 bg-slate-700 text-white rounded hover:bg-slate-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" disabled={execution.isPreparing || showRules}>Скинути 🔄</button>
-                    <button onClick={() => setShowRules(true)} disabled={execution.isPreparing || execution.executionState !== 'idle' || isVictory || isDefeat || showRules} className="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" >Правила 📜</button>
+                    <button onClick={() => setShowRules(true)} disabled={execution.isPreparing || execution.executionState !== 'idle' || isVictory || isDefeat || showRules} className="px-4 py-2 bg-indigo-700 text-white rounded hover:bg-indigo-800 transition font-medium disabled:cursor-not-allowed disabled:opacity-50" >Правила 📜</button>
                 </div>
 
                 <div className="mt-4 bg-gray-900 p-3 rounded-lg font-mono text-sm max-h-48 overflow-y-auto">
