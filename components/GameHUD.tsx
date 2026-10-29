@@ -16,7 +16,7 @@ export default function GameHUD({ levelNumber, attempts }: GameHUDProps) {
                     Рівень {levelNumber}
                 </span>
                 {typeof attempts === 'number' && (
-                    <span className="text-xs text-slate-300">
+                    <span className="text-sm text-slate-200">
                         Спроба #{Math.max(1, attempts)}
                     </span>
                 )}
@@ -38,11 +38,11 @@ export default function GameHUD({ levelNumber, attempts }: GameHUDProps) {
                     </div>
                 </div>
 
-                {/* Score */}
-                <div className="flex items-center gap-1 bg-yellow-600/30 px-3 py-1 rounded-lg border border-yellow-500/40" role="status" aria-live="polite" aria-atomic="true">
+                {/* Score: a solid "coin" chip, dark digits on amber, readable on the dark bar */}
+                <div className="flex items-center gap-1.5 bg-amber-300 text-slate-900 px-3 py-1 rounded-lg shadow-inner shadow-amber-500/40" role="status" aria-live="polite" aria-atomic="true">
                     <span className="sr-only">Рахунок: {score}</span>
-                    <span className="text-lg" aria-hidden="true">⭐</span>
-                    <span className="font-bold text-yellow-300" aria-hidden="true">{score}</span>
+                    <span className="text-lg leading-none" aria-hidden="true">⭐</span>
+                    <span className="font-extrabold tabular-nums" aria-hidden="true">{score}</span>
                 </div>
             </div>
         </div>

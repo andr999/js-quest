@@ -53,7 +53,7 @@ export default function ProfilePage() {
               <h1 className="text-2xl font-bold">
                 {user.fullName || user.username || "Гравець"}
               </h1>
-              <p className="text-sm text-slate-300">
+              <p className="text-base text-slate-100">
                 {user.primaryEmailAddress?.emailAddress}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function ProfilePage() {
           <div className="grid grid-cols-3 gap-4 mt-6">
             <div className="bg-white/10 rounded-xl p-3 text-center">
               <div className="text-2xl font-bold text-yellow-300">⭐ {score}</div>
-              <div className="text-xs text-slate-300 mt-1">Рахунок</div>
+              <div className="text-sm font-medium text-slate-100 mt-1">Рахунок</div>
             </div>
             <div className="bg-white/10 rounded-xl p-3 text-center" role="status" aria-live="polite" aria-atomic="true">
               <span className="sr-only">Життя: {lives} з {DEFAULT_LIVES}</span>
@@ -72,13 +72,13 @@ export default function ProfilePage() {
                   <span key={i} className={i < lives ? "" : "opacity-30"}>❤️</span>
                 ))}
               </div>
-              <div className="text-xs text-slate-300 mt-1" aria-hidden="true">Життя</div>
+              <div className="text-sm font-medium text-slate-100 mt-1" aria-hidden="true">Життя</div>
             </div>
             <div className="bg-white/10 rounded-xl p-3 text-center">
               <div className="text-2xl font-bold text-green-300">
                 {completedLevels.length}/{totalLevels}
               </div>
-              <div className="text-xs text-slate-300 mt-1">Рівнів пройдено</div>
+              <div className="text-sm font-medium text-slate-100 mt-1">Рівнів пройдено</div>
             </div>
           </div>
         </div>

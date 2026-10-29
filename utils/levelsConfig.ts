@@ -26,14 +26,13 @@ export const LEVELS_CONFIG: Record<number, LevelConfig> = {
     name: 'Умови',
     baseScore: 100,
     optimalSteps: 9,
-    initialPos: { x: 0, y: 1, dir: 'right' },
+    initialPos: { x: 0, y: 0, dir: 'right' },
     // The way turns twice, and `if (canMove()) move(); else turnRight();` in a loop follows it.
+    // The edge of the board is a wall for canMove(), so the map has no wall frame of its own.
     gridMap: [
-      ['wall', 'wall', 'wall', 'wall', 'wall', 'wall'],
-      ['robot', 'path', 'path', 'path', 'wall', 'wall'],
-      ['wall', 'wall', 'wall', 'path', 'wall', 'wall'],
-      ['wall', 'goal', 'path', 'path', 'wall', 'wall'],
-      ['wall', 'wall', 'wall', 'wall', 'wall', 'wall'],
+      ['robot', 'path', 'path', 'path'],
+      ['wall', 'wall', 'wall', 'path'],
+      ['wall', 'goal', 'path', 'path'],
     ],
   },
   3: {
@@ -81,7 +80,6 @@ export const LEVELS_CONFIG: Record<number, LevelConfig> = {
       ['path', 'path', 'path', 'path', 'path', 'path', 'path', 'path'],
       ['path', 'wall', 'wall', 'wall', 'path', 'path', 'path', 'wall'],
       ['path', 'key', 'path', 'path', 'path', 'enemy', 'path', 'goal'],
-      ['wall', 'wall', 'wall', 'wall', 'wall', 'wall', 'wall', 'wall'],
     ],
   },
   6: {
@@ -113,7 +111,7 @@ export const LEVELS_CONFIG: Record<number, LevelConfig> = {
       ['wall', 'wall', 'path', 'wall', 'path'],
       ['button', 'path', 'path', 'wall', 'wall'],
       ['wall', 'wall', 'platform', 'wall', 'path'],
-      ['wall', 'wall', 'path', 'path', 'goal'],
+      ['wall', 'path', 'path', 'path', 'goal'],
     ],
   },
 };

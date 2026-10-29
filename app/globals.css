@@ -31,3 +31,18 @@ body {
 .animate-fade-in {
   animation: fade-in 0.4s ease-out;
 }
+
+/* Syntax colours for the dark code editor (levels): readable on #1e1e2e, unlike prism's light theme. */
+.code-editor-dark .token.comment,
+.code-editor-dark .token.prolog { color: #a6adc8; }
+.code-editor-dark .token.punctuation { color: #bac2de; }
+.code-editor-dark .token.keyword { color: #cba6f7; }
+.code-editor-dark .token.string,
+.code-editor-dark .token.template-string { color: #a6e3a1; }
+.code-editor-dark .token.number,
+.code-editor-dark .token.boolean { color: #fab387; }
+.code-editor-dark .token.function { color: #89b4fa; }
+.code-editor-dark .token.class-name,
+.code-editor-dark .token.builtin { color: #f9e2af; }
+.code-editor-dark .token.operator { color: #89dceb; background: none; }
+.code-editor-dark textarea { caret-color: #f5e0dc; }

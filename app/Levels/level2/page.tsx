@@ -292,7 +292,7 @@ export default function Level2() {
         >
             <GridRenderer
                 gridMap={gridMap}
-                cols={6}
+                cols={4}
                 cellSize={CELL}
                 gap={GAP}
                 robotPos={position}

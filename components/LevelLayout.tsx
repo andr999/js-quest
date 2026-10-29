@@ -105,19 +105,19 @@ const DARK_EDITOR: React.CSSProperties = {
     backgroundColor: '#1e1e2e',
     color: '#cdd6f4',
     minHeight: '250px',
-    fontSize: '13px',
+    fontSize: '14px',
     borderRadius: '8px',
     lineHeight: '19.5px',
 };
 
 export default function LevelLayout({
     level, attempts,
-    code, onCodeChange, editorDisabled, editorDark, currentLine, editorExtra,
+    code, onCodeChange, editorDisabled, editorDark = true, currentLine, editorExtra,
     onRun, onReset, resetDisabled, isRunning, runDisabled, onPause, onStep, stepDisabled,
     showRules, onShowRules, onHideRules, rulesTitle, rulesContent,
     isVictory, victory,
     isDefeat, defeatSubtitle,
-    log, stepCount, logDark, logColorFn,
+    log, stepCount, logDark = true, logColorFn,
     gridClassName = 'w-full md:w-[400px]',
     children,
 }: LevelLayoutProps) {
@@ -188,6 +188,7 @@ export default function LevelLayout({
                                     highlight={c => Prism.highlight(c, Prism.languages.js, 'javascript')}
                                     padding={10}
                                     style={editorDark ? DARK_EDITOR : LIGHT_EDITOR}
+                                    className={editorDark ? 'code-editor-dark' : undefined}
                                     disabled={editorDisabled}
                                     textareaId={editorId}
                                     ignoreTabKey

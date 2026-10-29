@@ -477,6 +477,7 @@ export default function Level7() {
                         <ErrorBoundary>
                             <Editor
                                 textareaId="level-7-code-editor"
+                                className="code-editor-dark"
                                 value={code}
                                 onValueChange={(nextCode) => {
                                     if (getExecutionStateRef.current() === 'paused') resetLevel();
